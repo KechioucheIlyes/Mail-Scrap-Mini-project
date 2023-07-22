@@ -37,7 +37,7 @@ const UlStyled = styled.ul`
         box-shadow : 11px 10px 10px 6px grey;
         padding: 70px;
         border-radius: 20px;
-    ` 
+    `
 const LiStyled = styled.li`
     list-style: none;
     border: 1px solid grey;
@@ -67,7 +67,18 @@ export function Home() {
             })
                 .then((response) => response.json())
                 .then((parsedData) => {
-                    setValue(parsedData.msg)
+
+                    const datas = parsedData.msg
+                    console.log(datas)
+                    const cleanedData = []
+                    datas.map((element) => {
+                        if (element.includes(".png") || element.includes(".jpg") || element.includes(".jpg")) {
+                            console.log("no-email format")
+                        } else {
+                            cleanedData.push(element)
+                        }
+                    })
+                    setValue(cleanedData)
                 })
                 .catch((error) => {
                     console.error("Erreur lors de la récupération des données :", error);
