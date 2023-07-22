@@ -37,7 +37,7 @@ const UlStyled = styled.ul`
         box-shadow : 11px 10px 10px 6px grey;
         padding: 70px;
         border-radius: 20px;
-    `
+    ` 
 const LiStyled = styled.li`
     list-style: none;
     border: 1px solid grey;
