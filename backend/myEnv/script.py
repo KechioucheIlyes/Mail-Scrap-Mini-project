@@ -63,10 +63,10 @@ def test (user_url):
 
 if __name__ == "__main__":
     
-    # Récupérer le premier argument de la ligne de commande (ignorer le nom du script)
+
     param_from_nodejs = sys.argv[1]
 
-    # Appeler la fonction test() avec le paramètre récupéré
+
     test(param_from_nodejs)
 
 

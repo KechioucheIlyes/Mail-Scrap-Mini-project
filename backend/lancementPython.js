@@ -9,13 +9,12 @@ async function lancement(param) {
     );
 
     python.stdout.on("data", function (data) {
-        dataToSend += data.toString(); // Append data to the existing string
+        dataToSend += data.toString(); 
     });
 
     return new Promise((resolve, reject) => {
         python.on("close", (code) => {
             try {
-                // Parse the JSON string to get the array back
                 const parsedData = JSON.parse(dataToSend);
                 resolve(parsedData);
             } catch (error) {
